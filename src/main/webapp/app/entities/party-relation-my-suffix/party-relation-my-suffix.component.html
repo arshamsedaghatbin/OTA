@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span>Party Relations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-party-relation-my-suffix" [routerLink]="['/party-relation-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Party Relation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="partyRelations">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Party Relation</span></th>
+            <th><span>From Party</span></th>
+            <th><span>To Party</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let partyRelation of partyRelations ;trackBy: trackId">
+                <td><a [routerLink]="['/party-relation-my-suffix', partyRelation.id, 'view' ]">{{partyRelation.id}}</a></td>
+                <td>{{partyRelation.partyRelation}}</td>
+                <td>
+                    <div *ngIf="partyRelation.fromPartyId">
+                        <a [routerLink]="['../party-my-suffix', partyRelation.fromPartyId , 'view' ]" >{{partyRelation.fromPartyId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partyRelation.toPartyId">
+                        <a [routerLink]="['../party-my-suffix', partyRelation.toPartyId , 'view' ]" >{{partyRelation.toPartyId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/party-relation-my-suffix', partyRelation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/party-relation-my-suffix', partyRelation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'party-relation-my-suffix/'+ partyRelation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

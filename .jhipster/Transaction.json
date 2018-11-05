@@ -1,0 +1,50 @@
+{
+    "name": "Transaction",
+    "fields": [
+        {
+            "fieldName": "transactiondate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "transactionNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "transactionAmount",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "acount",
+            "otherEntityName": "acount",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "transactionRelation",
+            "otherEntityName": "transactionRelation",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "transaction"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "transaction",
+            "otherEntityName": "acount",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181105153243",
+    "javadoc": "Task entity.\n@author The JHipster team.",
+    "entityTableName": "transaction",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

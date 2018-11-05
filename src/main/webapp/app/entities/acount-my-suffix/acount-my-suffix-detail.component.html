@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="acount">
+            <h2><span>Acount</span> {{acount.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Acount Number</span></dt>
+                <dd>
+                    <span>{{acount.acountNumber}}</span>
+                </dd>
+                <dt><span>Balance</span></dt>
+                <dd>
+                    <span>{{acount.balance}}</span>
+                </dd>
+                <dt><span>Acount Type</span></dt>
+                <dd>
+                    <span>{{acount.acountType}}</span>
+                </dd>
+                <dt><span>Party</span></dt>
+                <dd>
+                    <div *ngIf="acount.partyId">
+                        <a [routerLink]="['/party-my-suffix', acount.partyId, 'view']">{{acount.partyId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Adsress</span></dt>
+                <dd>
+                    <div *ngIf="acount.adsressId">
+                        <a [routerLink]="['/party-my-suffix', acount.adsressId, 'view']">{{acount.adsressId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/acount-my-suffix', acount.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

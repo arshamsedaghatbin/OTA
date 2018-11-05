@@ -1,0 +1,32 @@
+{
+    "name": "TransactionRelation",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "sourceAcount",
+            "otherEntityName": "transaction",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "transactionRelation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "destinationAcount",
+            "otherEntityName": "transaction",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "transactionRelation"
+        }
+    ],
+    "changelogDate": "20181105153245",
+    "entityTableName": "transaction_relation",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

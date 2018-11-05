@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-transaction-my-suffix-heading">Create or edit a Transaction</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!transaction.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="transaction.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_transactiondate">Transactiondate</label>
+                    <div class="d-flex">
+                        <input id="field_transactiondate" type="datetime-local" class="form-control" name="transactiondate" [(ngModel)]="transactiondate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_transactionNumber">Transaction Number</label>
+                    <input type="text" class="form-control" name="transactionNumber" id="field_transactionNumber"
+                        [(ngModel)]="transaction.transactionNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_transactionAmount">Transaction Amount</label>
+                    <input type="number" class="form-control" name="transactionAmount" id="field_transactionAmount"
+                        [(ngModel)]="transaction.transactionAmount" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_acount">Acount</label>
+                    <select class="form-control" id="field_acount" name="acount" [(ngModel)]="transaction.acountId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="acountOption.id" *ngFor="let acountOption of acounts; trackBy: trackAcountById">{{acountOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_transactionRelation">Transaction Relation</label>
+                    <select class="form-control" id="field_transactionRelation" name="transactionRelation" [(ngModel)]="transaction.transactionRelationId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transactionRelationOption.id" *ngFor="let transactionRelationOption of transactionrelations; trackBy: trackTransactionRelationById">{{transactionRelationOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_transaction">Transaction</label>
+                    <select class="form-control" id="field_transaction" name="transaction" [(ngModel)]="transaction.transactionId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="acountOption.id" *ngFor="let acountOption of acounts; trackBy: trackAcountById">{{acountOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

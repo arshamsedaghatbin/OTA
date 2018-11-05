@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="partyRelation">
+            <h2><span>Party Relation</span> {{partyRelation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Party Relation</span></dt>
+                <dd>
+                    <span>{{partyRelation.partyRelation}}</span>
+                </dd>
+                <dt><span>From Party</span></dt>
+                <dd>
+                    <div *ngIf="partyRelation.fromPartyId">
+                        <a [routerLink]="['/party-my-suffix', partyRelation.fromPartyId, 'view']">{{partyRelation.fromPartyId}}</a>
+                    </div>
+                </dd>
+                <dt><span>To Party</span></dt>
+                <dd>
+                    <div *ngIf="partyRelation.toPartyId">
+                        <a [routerLink]="['/party-my-suffix', partyRelation.toPartyId, 'view']">{{partyRelation.toPartyId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/party-relation-my-suffix', partyRelation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

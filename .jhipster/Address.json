@@ -1,0 +1,38 @@
+{
+    "name": "Address",
+    "fields": [
+        {
+            "fieldName": "addresType",
+            "fieldType": "AddresType",
+            "fieldValues": "MOBILE,PHONE,ADDRESS"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "party",
+            "otherEntityName": "party",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "party",
+            "otherEntityName": "party",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181105153239",
+    "entityTableName": "address",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

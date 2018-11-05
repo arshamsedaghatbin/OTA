@@ -9,15 +9,8 @@ export interface IAddressMySuffix {
     addresType?: AddresType;
     description?: string;
     partyId?: number;
-    partyId?: number;
 }
 
 export class AddressMySuffix implements IAddressMySuffix {
-    constructor(
-        public id?: number,
-        public addresType?: AddresType,
-        public description?: string,
-        public partyId?: number,
-        public partyId?: number
-    ) {}
+    constructor(public id?: number, public addresType?: AddresType, public description?: string, public partyId?: number) {}
 }

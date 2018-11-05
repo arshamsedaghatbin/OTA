@@ -1,0 +1,106 @@
+entity Party {
+	uuid String,
+    pertyType PartyType 
+}
+
+entity Address {
+	addresType AddresType,
+    description String
+}
+
+entity PartyRelation {
+	partyRelation PartyRelationType,
+   
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Document {
+	addresType DocumenntType,
+    description String
+}
+
+
+entity Acount {
+	acountNumber String required,
+	balance BigDecimal,
+	acountType AcountType
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Transaction {
+	transactiondate ZonedDateTime,
+    transactionNumber String,
+    transactionAmount BigDecimal 
+}
+entity FlightTicket {
+	tcketId String
+}
+
+
+entity TransactionRelation {
+	transactionFrom Transaction,
+	transactionTo Transaction,
+    
+}
+
+enum AddresType {
+    MOBILE, PHONE, ADDRESS
+}
+
+enum PartyRelationType {
+    USER, COUNTER, MERCHANT
+}
+enum DocumenntType {
+    DOC
+}
+
+enum AcountType {
+    VALET , CREDIT
+}
+
+enum PartyType {
+    INDEVIDUAL , BUSINESE
+}
+relationship OneToMany {
+	Party{adsress} to Address,
+    Party{flightticket} to FlightTicket,
+    Party{document} to Document,
+    Party{acount} to Acount,
+    Acount{transaction} to Transaction
+	
+}
+
+relationship ManyToOne {
+	Acount{adsress} to Party,
+    Address{party} to Party,
+    Document{party} to Party,
+    Transaction{transaction} to Acount
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	Transaction {transactionRelation} to TransactionRelation,
+    PartyRelation {fromParty} to Party,
+      PartyRelation {toParty} to Party,
+      Party {relation} to PartyRelation
+       
+}
+
+
+// defining multiple oneToOne relationships
+
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+//paginate Job with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with mySuffix

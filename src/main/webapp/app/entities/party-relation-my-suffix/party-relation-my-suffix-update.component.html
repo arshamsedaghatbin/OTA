@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-party-relation-my-suffix-heading">Create or edit a Party Relation</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!partyRelation.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="partyRelation.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_partyRelation">Party Relation</label>
+                    <select class="form-control" name="partyRelation" [(ngModel)]="partyRelation.partyRelation" id="field_partyRelation" >
+                        <option value="USER">USER</option>
+                        <option value="COUNTER">COUNTER</option>
+                        <option value="MERCHANT">MERCHANT</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fromParty">From Party</label>
+                    <select class="form-control" id="field_fromParty" name="fromParty" [(ngModel)]="partyRelation.fromPartyId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partyOption.id" *ngFor="let partyOption of fromparties; trackBy: trackPartyById">{{partyOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_toParty">To Party</label>
+                    <select class="form-control" id="field_toParty" name="toParty" [(ngModel)]="partyRelation.toPartyId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partyOption.id" *ngFor="let partyOption of toparties; trackBy: trackPartyById">{{partyOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

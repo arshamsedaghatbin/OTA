@@ -1,0 +1,27 @@
+{
+    "name": "FlightTicket",
+    "fields": [
+        {
+            "fieldName": "tcketId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "party",
+            "otherEntityName": "party",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181105153244",
+    "entityTableName": "flight_ticket",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

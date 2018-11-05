@@ -1,0 +1,51 @@
+{
+    "name": "Acount",
+    "fields": [
+        {
+            "fieldName": "acountNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "balance",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "acountType",
+            "fieldType": "AcountType",
+            "fieldValues": "VALET,CREDIT"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "party",
+            "otherEntityName": "party",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transaction",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "acount"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "adsress",
+            "otherEntityName": "party",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181105153242",
+    "entityTableName": "acount",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

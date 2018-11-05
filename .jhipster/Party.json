@@ -1,0 +1,58 @@
+{
+    "name": "Party",
+    "fields": [
+        {
+            "fieldName": "uuid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pertyType",
+            "fieldType": "PartyType",
+            "fieldValues": "INDEVIDUAL,BUSINESE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "relation",
+            "otherEntityName": "partyRelation",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "party"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "adsress",
+            "otherEntityName": "address",
+            "otherEntityRelationshipName": "party"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "flightticket",
+            "otherEntityName": "flightTicket",
+            "otherEntityRelationshipName": "party"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "document",
+            "otherEntityName": "document",
+            "otherEntityRelationshipName": "party"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "acount",
+            "otherEntityName": "acount",
+            "otherEntityRelationshipName": "party"
+        }
+    ],
+    "changelogDate": "20181105153238",
+    "entityTableName": "party",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

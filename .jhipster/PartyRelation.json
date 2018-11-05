@@ -1,0 +1,38 @@
+{
+    "name": "PartyRelation",
+    "fields": [
+        {
+            "fieldName": "partyRelation",
+            "fieldType": "PartyRelationType",
+            "fieldValues": "USER,COUNTER,MERCHANT"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "fromParty",
+            "otherEntityName": "party",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partyRelation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "toParty",
+            "otherEntityName": "party",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partyRelation"
+        }
+    ],
+    "changelogDate": "20181105153240",
+    "entityTableName": "party_relation",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "Document",
+    "fields": [
+        {
+            "fieldName": "addresType",
+            "fieldType": "DocumenntType",
+            "fieldValues": "DOC"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "party",
+            "otherEntityName": "party",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "party",
+            "otherEntityName": "party",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181105153241",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "document",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

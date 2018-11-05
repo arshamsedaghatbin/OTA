@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "OTA",
+    "packageName": "com.roma",
+    "packageFolder": "com/roma",
+    "serverPort": 8080,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.6.0",
+    "jwtSecretKey": "ZDcwYTI3YjJiMTY1MjE2YmNiZTNlNWEzMTkzYzc5NDk4NjM0YzI4N2I4ODViNjU3MGZmYTc5MWFmODdiNjMzZTZhMDQ1OGQyOTZkOGJjMWJjMmNiMzkwZTdlNDg1MGNlNGY0OTJmYWE5ZWYxYWI4OWNkMjkyMThiMzYzMTRjZDc="
+  },
+  "git-provider": "GitHub",
+  "git-company": "arshamsedaghatbin",
+  "repository-name": "OTA"
+}

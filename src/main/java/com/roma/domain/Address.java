@@ -33,9 +33,8 @@ public class Address implements Serializable {
     @JsonIgnoreProperties("adsresses")
     private Party party;
 
-    @ManyToOne
-    @JsonIgnoreProperties("adsresses")
-    private Party party;
+
+
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -72,18 +71,8 @@ public class Address implements Serializable {
         this.description = description;
     }
 
-    public Party getParty() {
-        return party;
-    }
 
-    public Address party(Party party) {
-        this.party = party;
-        return this;
-    }
 
-    public void setParty(Party party) {
-        this.party = party;
-    }
 
     public Party getParty() {
         return party;

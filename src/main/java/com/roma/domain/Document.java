@@ -35,9 +35,7 @@ public class Document implements Serializable {
     @JsonIgnoreProperties("documents")
     private Party party;
 
-    @ManyToOne
-    @JsonIgnoreProperties("documents")
-    private Party party;
+
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -74,14 +72,7 @@ public class Document implements Serializable {
         this.description = description;
     }
 
-    public Party getParty() {
-        return party;
-    }
 
-    public Document party(Party party) {
-        this.party = party;
-        return this;
-    }
 
     public void setParty(Party party) {
         this.party = party;
@@ -96,9 +87,7 @@ public class Document implements Serializable {
         return this;
     }
 
-    public void setParty(Party party) {
-        this.party = party;
-    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override

@@ -12,10 +12,8 @@ import org.mapstruct.*;
 public interface DocumentMapper extends EntityMapper<DocumentDTO, Document> {
 
     @Mapping(source = "party.id", target = "partyId")
-    @Mapping(source = "party.id", target = "partyId")
     DocumentDTO toDto(Document document);
 
-    @Mapping(source = "partyId", target = "party")
     @Mapping(source = "partyId", target = "party")
     Document toEntity(DocumentDTO documentDTO);
 

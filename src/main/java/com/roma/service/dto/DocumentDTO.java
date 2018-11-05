@@ -17,7 +17,7 @@ public class DocumentDTO implements Serializable {
 
     private Long partyId;
 
-    private Long partyId;
+
 
     public Long getId() {
         return id;
@@ -43,13 +43,6 @@ public class DocumentDTO implements Serializable {
         this.description = description;
     }
 
-    public Long getPartyId() {
-        return partyId;
-    }
-
-    public void setPartyId(Long partyId) {
-        this.partyId = partyId;
-    }
 
     public Long getPartyId() {
         return partyId;

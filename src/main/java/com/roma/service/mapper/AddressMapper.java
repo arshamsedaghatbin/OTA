@@ -12,10 +12,8 @@ import org.mapstruct.*;
 public interface AddressMapper extends EntityMapper<AddressDTO, Address> {
 
     @Mapping(source = "party.id", target = "partyId")
-    @Mapping(source = "party.id", target = "partyId")
     AddressDTO toDto(Address address);
 
-    @Mapping(source = "partyId", target = "party")
     @Mapping(source = "partyId", target = "party")
     Address toEntity(AddressDTO addressDTO);
 
